@@ -1,40 +1,41 @@
 'use strict'
 
-function show(a,b){
+function show(a, b) {
   console.log(this);
-  function sum(){
+
+  function sum() {
     console.log(this);
     return a + b;
   }
   console.log(sum());
 }
 
-show(2,3);
+show(2, 3);
 let obj = {
   a: 10,
   b: 20,
   c: 30,
-  sum: function(){
-    function shout(){
+  sum: function () {
+    function shout() {
       console.log(this);
     }
-   shout();
+    shout();
   }
 }
 obj.sum();
 
-function User(name,id){
+function User(name, id) {
   this.name = name;
   this.id = id;
   this.human = true;
-  this.hello = function(){
+  this.hello = function () {
     console.log('hello ' + this.name);
   }
 }
 let Sasha = new User('Sasha', 36); // obj
 console.log(Sasha.hello);
 
-function sayName(surname){
+function sayName(surname) {
   console.log(this);
   console.log(this.name + surname);
 
@@ -47,7 +48,7 @@ let user = {
 sayName.call(user, 'Chupilka');
 sayName.apply(user, ['Chupilkaa']);
 
-function count(n){
+function count(n) {
   return this * n;
 }
 
@@ -60,19 +61,19 @@ console.log(double(3));
 
 let btn = document.querySelector('.btn');
 
-btn.addEventListener('click', function(){
+btn.addEventListener('click', function () {
   console.log(this);
   this.style.backgroundColor = 'red';
 });
 
-btn.addEventListener('click', (e) =>{
+btn.addEventListener('click', (e) => {
   console.log(this);
   e.target.style.backgroundColor = 'red';
 });
 
 let obj = {
   num: 5,
-  sayNumber: function(){
+  sayNumber: function () {
     let say = () => {
       console.log(this.num)
     }
@@ -82,8 +83,6 @@ let obj = {
 obj.sayNumber();
 
 let double = a => a * 2;
-let calc = (a,b) => a * b;
+let calc = (a, b) => a * b;
 
 console.log(double(4))
-
-
