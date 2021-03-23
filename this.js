@@ -71,7 +71,7 @@ btn.addEventListener('click', (e) => {
   e.target.style.backgroundColor = 'red';
 });
 
-let obj = {
+let obj1 = {
   num: 5,
   sayNumber: function () {
     let say = () => {
@@ -80,9 +80,9 @@ let obj = {
     say();
   }
 }
-obj.sayNumber();
+obj1.sayNumber();
 
-let double = a => a * 2;
+let double1 = a => a * 2;
 let calc = (a, b) => a * b;
 
-console.log(double(4))
+console.log(double1(4))
